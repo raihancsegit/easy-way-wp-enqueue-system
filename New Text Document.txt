@@ -1,0 +1,9 @@
+               $js_files = array(
+			'asn-main-js'=>array('path'=>ASN_ASSETS_PUBLIC_DIR . "/js/main.js",'dep'=>array('jquery','asn-another-js')),
+			'asn-another-js'=>array('path'=>ASN_ASSETS_PUBLIC_DIR . "/js/another.js",'dep'=>array('jquery','asn-more-js')),
+			'asn-more-js'=>array('path'=>ASN_ASSETS_PUBLIC_DIR . "/js/more.js",'dep'=>array('jquery')),
+		);
+
+		foreach($js_files as $handle=>$fileinfo){
+			wp_enqueue_script($handle,$fileinfo['path'],$fileinfo['dep'],$this->version,true);
+		}
